@@ -1,7 +1,7 @@
-### [인프런] 스프링 핵심 원리 - 고급편 정리
+## [인프런] 스프링 핵심 원리 - 고급편 정리
 
-1. [스레드 로컬](https://velog.io/@jiny798/ThreadLocal-In-Java)
-2. 템플릿 메서드 패턴
+### 1. [스레드 로컬](https://velog.io/@jiny798/ThreadLocal-In-Java)
+### 2. 템플릿 메서드 패턴
     - 좋은 설계는 변하는 것과 변하지 않는 것을 분리하는 것
 
 ```java
@@ -51,3 +51,5 @@ template.execute("OrderService.orderItem()");
 [V4 코드]
 - 공통 코드는 AbstraceTemplate의 execute에 정의하고
 - call 추상 메서드만 구현하는 형태
+
+### 3.
