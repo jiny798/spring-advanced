@@ -1,6 +1,7 @@
-package jiny.advanced.trace.logtrace;
+package jiny.advanced.trace.hellotrace.logtrace;
 
 import jiny.advanced.trace.TraceStatus;
+import jiny.advanced.trace.logtrace.ThreadLocalLogTrace;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

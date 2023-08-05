@@ -1,4 +1,4 @@
-package jiny.advanced.trace.template;
+package jiny.advanced.trace.template.code;
 
 import jiny.advanced.trace.template.code.AbstractTemplate;
 import jiny.advanced.trace.template.code.SubClassLogic1;
@@ -40,6 +40,27 @@ public class TemplateMethodTest {
         AbstractTemplate template1 = new SubClassLogic1();
         template1.execute();
         AbstractTemplate template2 = new SubClassLogic2();
+        template2.execute();
+    }
+
+    @Test
+    void templateMethodV2(){
+        AbstractTemplate template1 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("비즈니스 로직1 실행");
+            }
+        };
+        log.info("클래스 이름1={}",template1.getClass());
+        template1.execute();
+
+        AbstractTemplate template2 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("비즈니스 로직 2 실행");
+            }
+        };
+        log.info("클래스 이름2={}",template2.getClass());
         template2.execute();
     }
 }
