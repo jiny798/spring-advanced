@@ -4,6 +4,7 @@ import jiny.advanced.trace.logtrace.LogTrace;
 import jiny.advanced.trace.logtrace.ThreadLocalLogTrace;
 import jiny.proxy.config.AppV1Config;
 import jiny.proxy.config.AppV2Config;
+import jiny.proxy.config.v1_proxy.ConcreteProxyConfig;
 import jiny.proxy.config.v1_proxy.InterfaceProxyConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +12,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 
 //@Import({AppV1Config.class, AppV2Config.class})
-@Import(InterfaceProxyConfig.class)
+//@Import(InterfaceProxyConfig.class)
+@Import(ConcreteProxyConfig.class) //구체 클래스 기반 프록시
 @SpringBootApplication(scanBasePackages = "jiny.proxy.app") //주의
 public class ProxyApplication {
     public static void main(String[] args) {
