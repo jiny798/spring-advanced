@@ -82,3 +82,29 @@ call 추상 메서드만 구현하는 형태
 - JdbcTemplate , RestTemplate , TransactionTemplate , RedisTemplate 등이 이러한 형태
 Context -> Template
 Strategy -> Callback
+
+```java
+
+@Service
+public class OrderServiceV5 { 
+    private final OrderRepositoryV5 orderRepository;
+    private final TraceTemplate template;
+    
+    public OrderServiceV5(OrderRepositoryV5 orderRepository, LogTrace trace) {
+        this.orderRepository = orderRepository;
+        this.template = new TraceTemplate(trace);
+    }
+    
+    public void orderItem(String itemId) {
+        template.execute("OrderController.request()", () -> {
+        orderRepository.save(itemId);
+        return null;
+        });
+    }
+}
+
+
+```
+- 비즈니스 로직을 구현하여 파라미터로 전달하였음
+- 변하는 코드와 변하지 않는 코드를 분리했지만, 궁극적으로 로그 추적기 적용을 위해서
+비즈니스 로직에 어느정도의 코드(template)를 추가해야 한다는 단점이 남아있다.
