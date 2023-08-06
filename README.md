@@ -74,3 +74,11 @@ call 추상 메서드만 구현하는 형태
 ![img.png](img.png)
 - 클라이언트(메인) 에서 변하는 로직인 call() 을 가진 strategy 를 주입하고,
 <br/> 공통 코드+변하는 로직이 있는 execute() 를 실행한다.
+
+<br/>
+
+### 4. 템플릿 콜백 패턴
+- 전략 패턴에서 변형된 형태 (Gof에 포함되지는 않지만 이런식으로 많이 개발)
+- JdbcTemplate , RestTemplate , TransactionTemplate , RedisTemplate 등이 이러한 형태
+Context -> Template
+Strategy -> Callback
