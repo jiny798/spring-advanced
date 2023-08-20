@@ -6,7 +6,9 @@ import jiny.proxy.config.v2_dynamicproxy.handler.LogTraceBasicHandler;
 import org.springframework.context.annotation.Bean;
 
 import java.lang.reflect.Proxy;
-
+/*
+** JDK 동적 프록시 적용1
+ */
 public class DynamicProxyBasicConfig {
 
     @Bean
