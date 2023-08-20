@@ -12,7 +12,7 @@ public class CglibTest {
     void cglib() {
         ConcreteService target = new ConcreteService();
         Enhancer enhancer = new Enhancer();
-        enhancer.setSuperclass(ConcreteService.class);  // 타켓 클랙스 , 해당 클래스를 상속 받아서 프록시가 만들어진다
+        enhancer.setSuperclass(ConcreteService.class);  // 타켓 클랙스 , 해당 클래스를 상속 받아서 프록시가 만들어진다 ConcreteService 기본 생성자가 있어야한다
         enhancer.setCallback(new TimeMethodInterceptor(target)); // 공통로직+ (모든 실제 메서드호출) + 공통로직 -> 프록시에 적용할 로직
         ConcreteService proxy = (ConcreteService) enhancer.create();
 
